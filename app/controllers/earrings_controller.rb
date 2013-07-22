@@ -1,5 +1,6 @@
 class EarringsController < ApplicationController
-  before_action :set_earring, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:index, :show]
+  before_action :set_earring, only: [:edit, :update, :destroy]
 
   # GET /earrings
   # GET /earrings.json
@@ -10,11 +11,12 @@ class EarringsController < ApplicationController
   # GET /earrings/1
   # GET /earrings/1.json
   def show
+    @earring = Earring.find(params[:id])
   end
 
   # GET /earrings/new
   def new
-    @earring = Earring.new
+    @earring = current_user.earrings.new
   end
 
   # GET /earrings/1/edit
@@ -24,7 +26,7 @@ class EarringsController < ApplicationController
   # POST /earrings
   # POST /earrings.json
   def create
-    @earring = Earring.new(earring_params)
+    @earring = current_user.earrings.new(earring_params)
 
     respond_to do |format|
       if @earring.save
@@ -64,7 +66,7 @@ class EarringsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_earring
-      @earring = Earring.find(params[:id])
+      @earring = current_user.earrings.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

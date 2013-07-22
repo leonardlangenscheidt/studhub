@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130722134541) do
+ActiveRecord::Schema.define(version: 20130722162211) do
 
   create_table "earrings", force: true do |t|
     t.string   "brand"
@@ -19,7 +19,10 @@ ActiveRecord::Schema.define(version: 20130722134541) do
     t.boolean  "matched"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "earrings", ["user_id"], name: "index_earrings_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
