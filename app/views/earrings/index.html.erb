@@ -1,0 +1,31 @@
+<h1>Listing earrings</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Brand</th>
+      <th>Color</th>
+      <th>Matched</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @earrings.each do |earring| %>
+      <tr>
+        <td><%= earring.brand %></td>
+        <td><%= earring.color %></td>
+        <td><%= earring.matched %></td>
+        <td><%= link_to 'Show', earring %></td>
+        <td><%= link_to 'Edit', edit_earring_path(earring) %></td>
+        <td><%= link_to 'Destroy', earring, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Earring', new_earring_path %>

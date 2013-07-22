@@ -1,0 +1,23 @@
+<div class="row">
+	<div class="span6 offset3">
+		<div class="well">
+			<p>
+			  <strong>Brand:</strong>
+			  <%= @earring.brand %>
+			</p>
+
+			<p>
+			  <strong>Color:</strong>
+			  <%= @earring.color %>
+			</p>
+
+			<p>
+			  <strong>Matched:</strong>
+			  <%= @earring.matched %>
+			</p>
+
+			<%= link_to 'Edit', edit_earring_path(@earring) %> |
+			<%= link_to 'Back', earrings_path %>
+		</div>
+	</div>
+</div>
