@@ -71,6 +71,6 @@ class EarringsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def earring_params
-      params.require(:earring).permit(:brand, :color, :matched)
+      params.require(:earring).permit(:brand, :color, :matched, :image)
     end
 end

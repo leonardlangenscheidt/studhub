@@ -6,6 +6,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.0'
 gem 'devise'
 gem 'simple_form'
+gem 'paperclip', "~> 3.0"
 
 group :production do
   gem 'pg'

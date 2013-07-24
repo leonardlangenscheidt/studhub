@@ -1,6 +1,9 @@
 <div class="row">
 	<div class="span6 offset3">
 		<div class="well">
+
+			<%= image_tag @earring.image(:medium) %>
+
 			<p>
 			  <strong>Brand:</strong>
 			  <%= @earring.brand %>
@@ -15,10 +18,13 @@
 			  <strong>User:</strong>
 			  <%= @earring.user.name.capitalize %>
 			</p>
+
 			<% if current_user == @earring.user %>
 				<%= link_to 'Edit', edit_earring_path(@earring) %> |
 			<% end %>
+
 			<%= link_to 'Back', earrings_path %>
+
 		</div>
 	</div>
 </div>
