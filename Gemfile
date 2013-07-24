@@ -7,6 +7,10 @@ gem 'rails', '4.0.0'
 gem 'devise'
 gem 'simple_form'
 gem 'protected_attributes'
+gem "paperclip", "~> 3.0"
+gem 'rails-observers'
+gem 'actionpack-page_caching'
+gem 'actionpack-action_caching'
 
 group :production do
   gem 'pg'

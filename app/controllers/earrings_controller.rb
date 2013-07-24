@@ -2,6 +2,7 @@ class EarringsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
   before_action :set_earring, only: [:edit, :update, :destroy]
 
+
   # GET /earrings
   # GET /earrings.json
   def index
@@ -63,6 +64,7 @@ class EarringsController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_earring
@@ -71,6 +73,6 @@ class EarringsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def earring_params
-      params.require(:earring).permit(:brand, :color, :matched)
+      params.require(:earring).permit(:brand, :color, :matched, :image)
     end
 end
