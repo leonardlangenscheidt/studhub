@@ -24,7 +24,8 @@
 				<tr>
 					<td><%= earring.brand %></td>
 					<td><%= earring.color %></td>
-					<td><%= image_tag earring.image(:medium) %></td>
+					<td><%= image_tag earring.image.url(:medium) %></td>
+					<!-- <td><%= image_tag earring.image(:medium) %></td> -->
 					<td><%= link_to 'Show', earring %></td>
 					<% if current_user == earring.user %>
 						<td><%= link_to 'Edit', edit_earring_path(earring) %></td>
