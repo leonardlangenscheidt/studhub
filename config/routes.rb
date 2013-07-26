@@ -1,11 +1,12 @@
 Omrails::Application.routes.draw do
-  
+
   resources :earrings
 
   devise_for :users
-  root :to => 'pages#home'
+  root :to => 'earrings#index'
 
   get 'about' => 'pages#about'
+  get 'terms' => 'pages#terms'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -47,7 +48,7 @@ Omrails::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
