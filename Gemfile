@@ -9,6 +9,7 @@ gem 'simple_form', '3.0.0.rc'
 gem 'paperclip', "~> 3.4.2"
 gem 'aws-sdk'
 gem 'heroku'
+gem 'faker'
 
 group :production do
   gem 'pg'
