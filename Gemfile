@@ -6,7 +6,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.0'
 gem 'devise'
 gem 'simple_form', '3.0.0.rc'
-gem 'paperclip', "~> 3.0"
+gem 'paperclip', "~> 3.4.2"
 gem 'aws-sdk'
 gem 'heroku'
 
