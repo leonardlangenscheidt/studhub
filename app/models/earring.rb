@@ -7,5 +7,18 @@ class Earring < ActiveRecord::Base
       	has_attached_file :image, styles: {
       		medium: "320x240>"
       	}
-      	# , url: "/system/:attachment/:id/:style/:filename"
+
+      	# def not_matches
+      	#   @earring = Earrings.find(:id)
+      	#   not_matches = @earring.not_matches
+      	#   not_matches.join(",")
+      	# end
+
+      	# def self.search_for(brand, color, id)
+      	# 	Earring.where("brand = :brand AND color = :color AND id NOT IN (#{not_matches})", brand: "%#{brand}%", color:"%#{color}%", id:"%#{id}%")
+      	# end
+
+      	def self.search_for(brand, color, id)
+      		Earring.where("brand = :brand AND color = :color AND id != :id", brand: "%#{brand}%", color:"%#{color}%", id:"%#{id}%")
+      	end
 end

@@ -1,0 +1,31 @@
+<table class="table">
+		<thead>
+			<tr>
+				<th>Your Earring</th>
+				<th>Your Stats</th>
+				<th>Possible Match</th>
+				<th>Match's stats</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @earrings.count.times do |num| %>
+				<tr>
+					<td><%= image_tag @earrings[num].image(:medium) %></td>
+					<td><%= @earrings[num].brand %>, <%= @earrings[num].color %>, <%= @earrings[num].id %></td>
+					<% unless @search[num].count == 0 %>
+						<td><%= image_tag @search[num].first.image(:medium) %></td>
+						<td><%= @search[num].first.brand %>, <%= @search[num].first.color %>, <%= @search[num].first.id %></td>
+					<% else %>
+						<td>No Match</td>
+						<td>No Match</td>
+					<% end %>
+					<td><%= link_to 'Edit Filters', edit_earring_path(@earrings[num]) %></td>
+					<td><%= link_to 'Destroy', @earrings[num], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				</tr>
+			<% end %>
+
+		</tbody>
+	</table>

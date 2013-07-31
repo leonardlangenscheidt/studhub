@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130724145018) do
+ActiveRecord::Schema.define(version: 20130731002525) do
 
   create_table "earrings", force: true do |t|
     t.string   "brand"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20130724145018) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.text     "not_matching"
   end
 
   add_index "earrings", ["user_id"], name: "index_earrings_on_user_id"

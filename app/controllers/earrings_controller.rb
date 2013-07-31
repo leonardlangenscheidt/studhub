@@ -7,7 +7,13 @@ class EarringsController < ApplicationController
 	def index
 		if user_signed_in?
 			@earrings = current_user.earrings
+			@search = []
+			@earrings.each do |earring|
+				@search.push(Earring.search_for(earring.brand, earring.color, earring.id))
+			end
+			@instance = @search[0][1]
 		end
+
 	end
 
 	# GET /earrings/1

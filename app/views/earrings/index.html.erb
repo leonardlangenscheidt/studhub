@@ -4,36 +4,9 @@
 
 <% else %>
 
-
 	<h1>Listing earrings</h1>
 
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Brand</th>
-				<th>Color</th>
-				<th>Image</th>
-				<th></th>
-				<th></th>
-				<th></th>
-			</tr>
-		</thead>
-
-		<tbody>
-			<% @earrings.each do |earring| %>
-				<tr>
-					<td><%= earring.brand %></td>
-					<td><%= earring.color %></td>
-					<td><%= image_tag earring.image(:medium) %></td>
-					<td><%= link_to 'Show', earring %></td>
-					<% if current_user == earring.user %>
-						<td><%= link_to 'Edit', edit_earring_path(earring) %></td>
-						<td><%= link_to 'Destroy', earring, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-					<% end %>
-				</tr>
-			<% end %>
-		</tbody>
-	</table>
+	<%= render 'table' %>
 
 	<br />
 
